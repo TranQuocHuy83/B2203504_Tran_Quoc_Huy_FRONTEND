@@ -6,6 +6,11 @@ const routes = [
     name: "contactbook",
     component: ContactBook,
   },
+  {
+    path: "/:pathMatch(.*)*", // Bắt tất cả route không khớp
+    name: "notfound",
+    component: () => import("@/views/NotFound.vue"),
+  },
 ];
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
