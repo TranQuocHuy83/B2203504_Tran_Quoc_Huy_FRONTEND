@@ -13,6 +13,12 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3001,
+    port: 3001, // frontend chạy ở 3001
+    proxy: {
+      "/api": {
+        target: "http://localhost:3000/", // backend chạy ở 3000
+        changeOrigin: true, // giả header Host về backend
+      },
+    },
   },
 });
