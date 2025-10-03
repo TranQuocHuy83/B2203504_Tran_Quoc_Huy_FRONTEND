@@ -69,6 +69,7 @@ export default {
     InputSearch,
     ContactList,
   },
+
   data() {
     return {
       contacts: [],
@@ -118,6 +119,7 @@ export default {
     refreshList() {
       this.retrieveContacts();
       this.activeIndex = -1;
+      this.searchText = ""; //thêm dòng này để refresh searchText
     },
     async removeAllContacts() {
       if (confirm("Bạn muốn xóa tất cả Liên hệ?")) {
